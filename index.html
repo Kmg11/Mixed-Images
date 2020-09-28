@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Full page images slider & random selection with lots of options to choose from to make your idea or preview your project">
+	<title>Mixed Viewer</title>
+	<link rel="icon" href="img/icon.png">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+</head>
+<!-- 
+	Version 2:
+		- add profile for users to add there slides & click on 3 dots to change settings
+		- menu in the left to show profile settings
+		- Change Right Click Menu
+		- Download Images & Backup Images For View
+		- Guid For Shortcuts
+		- Overscroll [Not Important]
+		- Colors [ U Can Add Check box If Checked Convert hex code to rgba and add percent by user chosse ]
+		- Buttons Text Color
+		- Swipes
+		- don't forget swipes [
+			- [swipe left & right] for slider [next - prev]
+			- [swipe down] for open settings
+			- [swipe from most left] for open gallery
+		]
+		- loading screen [
+			- Loading Change Some Photos Fast And Slow And Progress Bar Or Loading Circle
+			- progress bar after images
+			- some imformation about the site
+			- confirm button when progress bar complete
+			- notes for how to use this website [
+				- like controls & shortcut keys
+			]
+		]
+-->
+
+<body>
+
+	<div class="slider">
+		<!-- Start Slider Settings -->
+
+		<div class="s-settings">
+			<header>
+				<h2>Settings</h2>
+				<div class="buttons">
+					<button id="resetSettingsBtn">Reset</button>
+					<button id="closeSettingsBtn">Close</button>
+				</div>
+			</header>
+			<div class="settings-cont" id="my-scrollbar">
+				<div class="colors-options options">
+					<h3 class="settings-header">Colors option</h3>
+					<div class="bg-color-option">
+						<h4 class="settings-sub-header">Background color</h4>
+						<div class="colors options-choice">
+							<div data-color="rgba(18, 18, 18, 0.9)" class="black active"></div>
+							<div data-color="rgba(34, 34, 34, 0.815)" class="black-light"></div>
+							<div data-color="rgba(47, 54, 64, 0.815)" class="grey"></div>
+							<div data-color="rgba(219, 220, 225, 0.715)" class="white-dark"></div>
+							<div data-color="rgba(245, 246, 250, 0.815)" class="white"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+					<div class="fg-color-option">
+						<h4 class="settings-sub-header">Forground color</h4>
+						<div class="colors options-choice">
+							<div data-color="#121212" class="black"></div>
+							<div data-color="#333" class="black-light"></div>
+							<div data-color="#555" class="grey"></div>
+							<div data-color="#fff" class="white active"></div>
+							<div data-color="#ddd" class="white-dark"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+					<div class="main-color-option">
+						<h4 class="settings-sub-header">Main color</h4>
+						<div class="colors options-choice">
+							<div data-color="#651fff" class="blue"></div>
+							<div data-color="#1e88e5" class="blue-light active"></div>
+							<div data-color="#f50057" class="red"></div>
+							<div data-color="#ff3d00" class="orange"></div>
+							<div data-color="#00c853" class="green"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-options options">
+					<h3 class="settings-header">Slider option</h3>
+					<div class="save-option">
+						<h4 class="settings-sub-header">Save local</h4>
+						<div class="state options-choice">
+							<div class="on active">On</div>
+							<div class="off">Off</div>
+						</div>
+					</div>
+					<div class="help-option">
+						<h4 class="settings-sub-header">Help</h4>
+						<div class="state options-choice">
+							<div class="on active">On</div>
+							<div class="off">Off</div>
+						</div>
+					</div>
+					<div class="random-option">
+						<h4 class="settings-sub-header">Random images</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="repeat-option">
+						<h4 class="settings-sub-header">Repeat images</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="full-view-option">
+						<h4 class="settings-sub-header">Full view</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="style-option">
+						<h4 class="settings-sub-header">Slider style</h4>
+						<div class="state options-choice">
+							<div class="fade active">Fade</div>
+							<div class="slide">Slide</div>
+						</div>
+					</div>
+				</div>
+				<div class="timing-options options">
+					<h3 class="settings-header">Timing option</h3>
+					<div class="random-time-option">
+						<h4 class="settings-sub-header">Random time</h4>
+						<div class="times options-choice">
+							<div data-time="2000">2s</div>
+							<div data-time="3000">3s</div>
+							<div data-time="4000">4s</div>
+							<div data-time="5000" class="active">5s</div>
+							<div data-time="6000">6s</div>
+							<div data-time="7000">7s</div>
+							<div data-time="8000">8s</div>
+							<div data-time="9000">9s</div>
+							<div data-time="10000">10s</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- End Slider Settings -->
+		<!-- Start Slider Imgs -->
+
+		<div class="s-imgs fade" data-repeat="no">
+			<img src="img/01.jpg" alt="Image 1">
+			<img src="img/02.jpg" alt="Image 2">
+			<img src="img/03.jpg" alt="Image 3">
+			<img src="img/04.jpg" alt="Image 4">
+			<img src="img/05.jpg" alt="Image 5">
+			<img src="img/06.jpg" alt="Image 6">
+			<img src="img/07.jfif" alt="Image 7">
+			<img src="img/08.jpg" alt="Image 8">
+			<img src="img/09.jpg" alt="Image 9">
+			<img src="img/10.jpg" alt="Image 10">
+		</div>
+
+		<!-- End Slider Imgs -->
+		<!-- Start Slider Gallery -->
+
+		<div class="gallery">
+			<img src="img/01.jpg" alt="Image 1" data-number="0">
+			<img src="img/02.jpg" alt="Image 2" data-number="1">
+			<img src="img/03.jpg" alt="Image 3" data-number="2">
+			<img src="img/04.jpg" alt="Image 4" data-number="3">
+			<img src="img/05.jpg" alt="Image 5" data-number="4">
+			<img src="img/06.jpg" alt="Image 6" data-number="5">
+			<img src="img/07.jfif" alt="Image 7" data-number="6">
+			<img src="img/08.jpg" alt="Image 8" data-number="7">
+			<img src="img/09.jpg" alt="Image 9" data-number="8">
+			<img src="img/10.jpg" alt="Image 10" data-number="9">
+		</div>
+
+		<!-- End Slider Gallery -->
+		<!-- Start Slider Controls -->
+
+		<div class="s-controls help">
+			<div id="settingsBtn"><i class="fas fa-sliders-h"></i></div>
+			<div id="firstBtn"><i class="fas fa-angle-double-left"></i></div>
+			<div id="prevBtn"><i class="fas fa-angle-left"></i></div>
+			<div id="randomBtn"><i class="fas fa-play"></i></div>
+			<div id="nextBtn"><i class="fas fa-angle-right"></i></div>
+			<div id="lastBtn"><i class="fas fa-angle-double-right"></i></div>
+			<div id="galleryBtn"><i class="far fa-images"></i></div>
+		</div>
+
+		<!-- End Slider Controls -->
+	</div>
+
+	<script src="js/smooth-scrollbar.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
