@@ -1,3 +1,9 @@
+/*
+** Idea By: Kirolos Mahfouz
+** Designed By: Kirolos Mahfouz
+** Frontend By: Kirolos Mahfouz
+*/
+
 // Start Global Variables
 
 let sliderImgsCont = document.querySelector(".s-imgs"),
@@ -9,7 +15,8 @@ let sliderImgsCont = document.querySelector(".s-imgs"),
 	sliderImgsLength = sliderImgs.length,
 	galleryImgsLength = galleryImgs.length,
 
-	settingsCont = document.querySelector(".s-settings"),
+	guideCont = document.querySelector(".guide");
+settingsCont = document.querySelector(".s-settings"),
 	controlsCont = document.querySelector(".s-controls"),
 
 	currentSlide = 0;
@@ -17,6 +24,7 @@ let sliderImgsCont = document.querySelector(".s-imgs"),
 // End Global Variables
 // Start Trigger Smooth Scroll
 
+Scrollbar.init(guideCont);
 Scrollbar.init(galleryCont);
 Scrollbar.init(document.querySelector('.settings-cont'));
 
@@ -182,6 +190,9 @@ if (styleOptionLocal !== null) {
 // End Local Storage [ Style Option ]
 // Start Controls [ Click ]
 
+let guidClose = document.querySelector("#close");
+guidClose.onclick = toggleGuide;
+
 sliderImgs.forEach(ele => {
 	ele.onclick = toggleFullView;
 });
@@ -217,13 +228,17 @@ galleryBtn.addEventListener("click", toggleGallery);
 
 window.addEventListener("keyup", (e) => {
 	switch (e.keyCode) {
-		case 70: // f
-			!settingsCont.classList.contains("show") ? toggleFullView() : null;
+		case 72: // H
+			toggleGuide();
+			break;
+		case 70: // F
+			toggleFullView();
 			break;
 		case 83: // S
 			toggleSettings();
 			break;
 		case 27: // Esc
+			!guideCont.classList.contains("hide") ? toggleGuide() : null
 			settingsCont.classList.contains("show") ? toggleSettings() : null
 			galleryCont.classList.contains("show") ? toggleGallery() : null
 			break;
@@ -254,6 +269,12 @@ window.addEventListener("keyup", (e) => {
 // End Controls [ Keyboard ]
 // Start Controls Functions
 
+function toggleGuide() {
+	guideCont.classList.toggle("hide");
+	closeGallery();
+	settingsCont.classList.contains("show") ? toggleSettings() : null;
+}
+
 function toggleFullView() {
 	if (!galleryCont.classList.contains("show")) {
 		if (controlsCont.classList.contains("hide")) {
@@ -269,7 +290,9 @@ function toggleFullView() {
 }
 
 function toggleSettings() {
-	settingsCont.classList.toggle("show");
+	if (guideCont.classList.contains("hide")) {
+		settingsCont.classList.toggle("show");
+	}
 	closeGallery();
 }
 
@@ -340,7 +363,9 @@ function lastSlide() {
 };
 
 function toggleGallery() {
-	galleryCont.classList.toggle("show");
+	if (guideCont.classList.contains("hide")) {
+		galleryCont.classList.toggle("show");
+	}
 };
 
 document.addEventListener("click", () => {
@@ -653,4 +678,10 @@ function setLocalStorage(key, value) {
 	}
 }
 
-// End Functions
+// End Functions 681
+
+/*
+** Idea By: Kirolos Mahfouz
+** Designed By: Kirolos Mahfouz
+** Frontend By: Kirolos Mahfouz
+*/

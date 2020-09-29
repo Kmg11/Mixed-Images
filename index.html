@@ -4,8 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Full page images slider & random selection with lots of options to choose from to make your idea or preview your project">
-	<title>Mixed Viewer</title>
+	<meta name="description"
+		content="Full page images slider & random selection with lots of options to choose from to make your idea or preview your project">
+	<title>Photo Viewer</title>
 	<link rel="icon" href="img/icon.png">
 	<link rel="stylesheet" href="css/all.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -13,21 +14,26 @@
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
 </head>
+
+<!--
+		** Idea By: Kirolos Mahfouz
+		** Designed By: Kirolos Mahfouz
+		** Frontend By: Kirolos Mahfouz -->
 <!-- 
+
 	Version 2:
-		- add profile for users to add there slides & click on 3 dots to change settings
-		- menu in the left to show profile settings
-		- Change Right Click Menu
-		- Download Images & Backup Images For View
-		- Guid For Shortcuts
-		- Overscroll [Not Important]
-		- Colors [ U Can Add Check box If Checked Convert hex code to rgba and add percent by user chosse ]
-		- Buttons Text Color
-		- Swipes
-		- don't forget swipes [
-			- [swipe left & right] for slider [next - prev]
-			- [swipe down] for open settings
-			- [swipe from most left] for open gallery
+		- Add Question Mark To Every Setting next to setting header to explain what this settings do & hide it when the user choose to turn off help
+		- Need Some Maintance In Preformance
+		- Colors [
+			- Colors [ U Can Add Check box If Checked Convert hex code to rgba and add percent by user chosse ]
+			- Buttons Text Color
+		]
+		- Guide [
+			- Make Guide As A Slider
+			- Make Two Buttons In Guide [
+				First: Close & Open Again
+				Second: Close Forever & Save In Local Storage
+			]
 		]
 		- loading screen [
 			- Loading Change Some Photos Fast And Slow And Progress Bar Or Loading Circle
@@ -38,11 +44,136 @@
 				- like controls & shortcut keys
 			]
 		]
+		- Overscroll [
+			- Idea [
+				- Add Padding To The Slider From Top & Button
+				- When Scroll To Far Top Or Bottom Padding Add & Remove In Specific Time
+			] 
+		]
+		- Swipes [
+			- Swipe Left ( One Finger ): Next Slide
+			- Swipe Right ( One Finger ): Previous Slide
+			- Swipe Left ( Two Finger ): Last Slide
+			- Swipe Right ( Two Finger ): First Slide
+			- Swipe Left ( From Far Right ): Open Gallery
+			- Swipe Right ( From Far Left ): Open Settings
+			- Swipe Up ( One Finger ): Start Random
+			- Swipe Down ( One Finger ): Stop Random
+		]
+		- Change Right Click Menu
+		- Download Images & Backup Images For View
+		- Make Website As A Social Media [
+			- Add profile for users to add there slides & click on 3 dots to change settings
+			- menu in the left to show profile settings
+			- every user can share slides from another user
+		]
 -->
 
 <body>
 
 	<div class="slider">
+
+		<!-- Start Slider Guide -->
+
+		<div class="guide">
+			<h1>Photo Viewer</h1>
+			<div class="what">
+				<h3>What's photo viewer?</h3>
+				<p>
+					Photo Viewer is a site that allows you to display a group of pictures in two different forms ( Fade
+					-
+					Slide) so that you can share them with your friends, and the site gives you a set of settings to
+					control
+					the way pictures are displayed and the time period for displaying each image and a group of other
+					settings that we will explain how to use them below.
+				</p>
+			</div>
+			<div class="how">
+				<h3>How to use photo viewer?</h3>
+				<div class="guide-text">
+					<h4>If you want to go to the Next image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Next button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Right arrow <i class="fas fa-chevron-right"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Previous image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Previous button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Left arrow <i class="fas fa-chevron-left"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Last image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Last button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Down arrow <i class="fas fa-chevron-down"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Last image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Last button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Up arrow <i class="fas fa-chevron-up"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to toggle between [ On / Off ] Random Images, you can use one of these two
+						methods:
+					</h4>
+					<div class="methods">
+						<p>Click the Random button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">Enter</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to view Images without any thing, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click on the image</p>
+						<p>Click on the <span class="key">F</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to open Gallery, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Gallery button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">G</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to open Settings, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Settings button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">S</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to reset all Settings, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the reset button that appears in the Settings Box in the top of the page</p>
+						<p>Click on the <span class="key">R</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to close any open thing like [ Gallery - Settings - Guide ], you can use this method:</h4>
+					<div class="methods">
+						<p>Click on the <span class="key">Esc</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to toggle Guide, you can use this method:</h4>
+					<div class="methods">
+						<p>Click on the <span class="key">H</span> Key on the keyboard</p>
+					</div>
+				</div>
+			</div>
+			<div class="close-guid">
+				<button id="close">Close</button>
+			</div>
+		</div>
+
+		<!-- End Slider Guide -->
 		<!-- Start Slider Settings -->
 
 		<div class="s-settings">
